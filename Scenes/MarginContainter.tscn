@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="MarginContainter" type="MarginContainer"]
+margin_right = 130.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 160, 160 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

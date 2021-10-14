@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[node name="CreateListButton" type="TextureButton"]
+margin_right = 288.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 288, 144 )
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

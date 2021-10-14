@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/NotesConstructor.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MarginContainter.tscn" type="PackedScene" id=3]
+
+[node name="MarginContainter" instance=ExtResource( 3 )]
+margin_right = 160.0
+margin_bottom = 160.0
+script = ExtResource( 2 )
+
+[node name="PopupMenu" type="PopupMenu" parent="." index="0"]
+margin_right = 160.0
+margin_bottom = 220.0
+items = [ "New Note", ExtResource( 1 ), 0, false, false, 0, 0, null, "", false, "New List", ExtResource( 1 ), 0, false, false, 1, 0, null, "", false, "Item 2", ExtResource( 1 ), 0, false, false, 2, 0, null, "", false ]
+hide_on_state_item_selection = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="." index="1"]
+margin_right = 160.0
+margin_bottom = 160.0
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_PopupMenu_id_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
