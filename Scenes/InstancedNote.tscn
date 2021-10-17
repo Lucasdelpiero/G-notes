@@ -1,42 +1,77 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/InstancedNote.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Themes/AppTittle.tres" type="Theme" id=3]
 
-[node name="InstancedNote" type="Panel"]
+[node name="InstancedNote" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -3.0
+margin_bottom = -3.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SaveButton" type="Button" parent="."]
-margin_left = 793.216
-margin_top = 17.717
-margin_right = 963.216
-margin_bottom = 87.717
-text = "SAVE"
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 397.0
+margin_bottom = 88.0
+alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 88.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 8.0
+margin_right = 212.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+margin_right = 204.0
+margin_bottom = 4.0
+
+[node name="LabelTittle" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 204.0
+margin_bottom = 41.0
+text = "Titulo"
+
+[node name="Tittle" type="LineEdit" parent="HBoxContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 204.0
+margin_bottom = 88.0
+focus_next = NodePath("../Content")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+margin_left = 216.0
+margin_right = 397.0
+margin_bottom = 88.0
+text = "Guardar"
 icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tittle" type="LineEdit" parent="."]
-margin_left = 272.0
-margin_top = 72.1189
-margin_right = 506.0
-margin_bottom = 98.1189
-focus_next = NodePath("../Content")
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Content" type="TextEdit" parent="."]
-margin_left = 276.0
-margin_top = 122.0
-margin_right = 732.0
-margin_bottom = 552.0
+margin_top = 92.0
+margin_right = 397.0
+margin_bottom = 597.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "asdsadadadsaa"
 fold_gutter = true
 wrap_enabled = true
@@ -45,6 +80,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
-[connection signal="text_entered" from="Tittle" to="." method="_on_Tittle_enter"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/Tittle" to="." method="_on_Tittle_enter"]
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="focus_entered" from="Content" to="." method="_on_Content_focus_entered"]

@@ -1,8 +1,8 @@
-extends Panel
+extends VBoxContainer
 
 var saveTittle = null
 var saveContent = null
-onready var tittle = $Tittle
+onready var tittle = $HBoxContainer/VBoxContainer/Tittle
 onready var content = $Content
 
 # Called when the node enters the scene tree for the first time.
@@ -45,7 +45,7 @@ func save_text():
 	saveContent.text = content.text
 
 
-func _on_Tittle_enter(new_text):
+func _on_Tittle_enter(_new_text):
 	pass
 #	content.grab_focus()
 #	yield(get_tree().create_timer(0.1),"timeout")

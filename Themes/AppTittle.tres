@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://Themes/Roboto-Black.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+GridContainer/constants/hseparation = 4
+GridContainer/constants/vseparation = 4
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 4
